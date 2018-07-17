@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.net.Socket;
 
 /**
+ * 客户端处理器
+ *
  * @author cheng
  *         2018/7/16 12:19
  */
@@ -19,6 +21,7 @@ public class clientHandler {
 
     public void start() {
         System.out.println("新客户端接入");
+        // 创建客户端读写线程避免阻塞接收客户端连接
         new Thread(this::doStart).start();
     }
 
